@@ -1,0 +1,25 @@
+import numpy as np
+n=int(input("pls enter n in n*n matrix"))
+magic_num=n*(n**2+1)/2
+array =np.random.randint(1,100, size=(n,n))
+sum_r= np.sum(array,axis=1).tolist()
+sum_c= np.sum(array,axis=0).tolist()
+sum_d1= np.trace(array)
+new_array= array[:, ::-1]
+sum_d2=np.trace(new_array)
+
+print("the array is:")
+print(array)
+for i in range(n):
+  if sum_r[i]==magic_num and sum_c[i]==magic_num and sum_d1==magic_num and sum_d2==magic_num:
+    print("yes,the magic number is:{}",format(magic_num))
+print("no")
+
+
+example of output
+pls enter n in n*n matrix3
+the array is:
+[[93 69 87]
+ [96 90 59]
+ [59 57 34]]
+no
